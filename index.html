@@ -62,6 +62,13 @@
         nav {
             display: flex;
             gap: 2rem;
+            background-color: rgba(157, 78, 221, 0.08);
+            width: auto;
+            height: 48px;
+            align-items: center;
+            padding: 0 1.5rem;
+            border-radius: 24px;
+            float: right;
         }
 
         nav a {
@@ -137,10 +144,50 @@
             border-color: var(--accent-purple);
         }
 
+        .tema-card h3,
+        .software-item h4 {
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
         .tema-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--accent-neon);
+        }
+
+        .lista-temas {
+            list-style: none;
+            background-color: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .lista-temas li {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .lista-temas li:last-child {
+            border-bottom: none;
+        }
+
+        .lista-temas li a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .lista-temas li a:hover {
+            color: var(--accent-purple);
+            padding-left: 0.5rem;
+        }
+
+        p#introSitio.resaltado {
+            color: var(--accent-neon);
+            font-style: italic;
+            font-weight: 600;
         }
 
         .tabla-container {
@@ -273,12 +320,14 @@
         .cert-button {
             background-color: var(--accent-neon);
             color: var(--bg-dark);
-            padding: 0.6rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 20px;
             font-weight: 700;
+            font-size: 0.85rem;
             text-decoration: none;
             display: inline-block;
             margin-top: 1rem;
+            margin-right: 0.6rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -334,7 +383,7 @@
 
     <section class="hero">
         <h1>enhancedvision</h1>
-        <p>Explorando el arte de la postproducción audiovisual y las herramientas clave para transformar tus ideas en realidades cinematográficas.</p>
+        <p id="introSitio" class="resaltado">Explorando el arte de la postproducción audiovisual y las herramientas clave para transformar tus ideas en realidades cinematográficas.</p>
     </section>
 
     <main class="container">
@@ -351,6 +400,12 @@
                 </div>
             </div>
         </section>
+
+        <ul class="lista-temas">
+            <li><a href="#tabla-tecnicas">Técnicas de cinematografía (ver tabla)</a></li>
+            <li><a href="#programas">Software recomendado de edición</a></li>
+            <li><a href="https://www.premiumbeat.com/blog/glossary-of-film-techniques/" target="_blank">Glosario de términos cinematográficos (sitio externo)</a></li>
+        </ul>
 
         <section id="tabla-tecnicas" style="margin-bottom: 5rem;">
             <h2 class="section-title">Técnicas de Cinematografía</h2>
@@ -421,7 +476,9 @@
                 <p>Contacto: <a href="mailto:gabrielvaronbrochero@gmail.com">gabrielvaronbrochero@gmail.com</a></p>
                 <span class="badge">Institución: SKOLMI</span>
                 <div>
-                    <a href="certificado.pdf" target="_blank" class="cert-button">Ver Certificado 🎓</a>
+                    <a href="certificado.pdf" target="_blank" class="cert-button">Core Editing 🎓</a>
+                    <a href="certificado-advanced-tools.pdf" target="_blank" class="cert-button">Advanced Tools 🎓</a>
+                    <a href="certificado-reels-tiktok.pdf" target="_blank" class="cert-button">Reels & TikTok 🎓</a>
                 </div>
             </div>
         </div>
