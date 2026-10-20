@@ -18,6 +18,8 @@
             --line: #2a2a30;
         }
 
+        /* MODELO DE CAJA global: margin/padding en 0 y box-sizing: border-box
+           (el ancho incluye padding y borde) */
         * {
             margin: 0;
             padding: 0;
@@ -35,6 +37,7 @@
             line-height: 1.6;
         }
 
+        /* MODELO DE CAJA (padding, border-bottom) + POSICIÓN sticky: el header se queda pegado arriba al hacer scroll */
         header {
             background-color: rgba(26, 26, 30, 0.95);
             padding: 1.5rem 10%;
@@ -131,12 +134,47 @@
             margin-bottom: 5rem;
         }
 
+        /* ===== MODELO DE CAJA + POSICIÓN: tarjetas de "Pilares del Sitio" ===== */
         .tema-card {
+            position: relative;                  /* POSICIÓN relative: referencia para el número absoluto */
             background-color: var(--bg-card);
-            padding: 2.5rem;
+            padding: 2.5rem;                     /* padding */
+            margin: 0.5rem;                      /* margin */
             border-radius: 12px;
-            border: 1px solid var(--line);
+            border: 1px solid var(--line);       /* border */
             transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .tema-numero {
+            position: absolute;                  /* POSICIÓN absolute: dentro de la esquina de la tarjeta */
+            top: 12px;
+            right: 16px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--accent-purple);
+        }
+
+        /* ===== POSICIÓN fixed: botón que siempre queda visible en la pantalla ===== */
+        .btn-subir {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 200;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: var(--accent-purple);
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-subir:hover {
+            background-color: var(--accent-neon);
+            color: var(--bg-dark);
         }
 
         .tema-card:hover {
@@ -233,13 +271,17 @@
             border: 1px solid var(--line);
         }
 
+        /* ===== MODELO DE CAJA: cada programa es una caja con content, padding, border y margin ===== */
         .software-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--line);
+            padding: 1.2rem 1.5rem;              /* padding: espacio interno */
+            margin-bottom: 1rem;                 /* margin: espacio externo */
+            border: 1px solid var(--line);       /* border: borde de la caja */
+            border-radius: 10px;
+            background-color: #1f1f24;
         }
 
         .software-item:last-child {
-            border-bottom: none;
+            margin-bottom: 0;
         }
 
         .software-item h4 {
@@ -391,10 +433,12 @@
             <h2 class="section-title">Pilares del Sitio</h2>
             <div class="temas-grid">
                 <div class="tema-card">
+                    <span class="tema-numero">01</span>
                     <h3>Edición de Video</h3>
                     <p>Dominio de la línea de tiempo, estructuras narrativas, ritmo visual, uso de transiciones justificadas y la gestión técnica de formatos de compresión.</p>
                 </div>
                 <div class="tema-card">
+                    <span class="tema-numero">02</span>
                     <h3>Cinematografía</h3>
                     <p>Análisis del lenguaje visual, composición de encuadres, dirección de fotografía, psicología del color y cómo la iluminación define el tono de una historia.</p>
                 </div>
@@ -487,5 +531,7 @@
     <footer>
         <p>&copy; 2026 enhancedvision. Creado para fines académicos.</p>
     </footer>
+
+    <a href="#" class="btn-subir" aria-label="Volver arriba">↑</a>
 </body>
 </html>
