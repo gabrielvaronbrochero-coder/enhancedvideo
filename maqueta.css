@@ -1,0 +1,105 @@
+/* ===== MODELO DE CAJA: reinicio general =====
+   box-sizing: border-box hace que el ancho incluya padding y borde */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* Contenedor verde que envuelve toda la maqueta */
+.contenedor {
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;                 /* margin: centra la caja */
+    padding: 15px;                  /* padding: espacio interno */
+    background-color: #70ad47;
+    border: 2px solid #2f5597;      /* border */
+}
+
+/* ===== HEADER (naranja) con la imagen posicionada de forma absoluta ===== */
+header {
+    position: relative;             /* POSICIÓN: referencia para la imagen absoluta */
+    height: 140px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #ed7d31;
+    border: 2px solid #2f5597;
+    color: #ffffff;
+    text-align: center;
+}
+
+header p {
+    width: 60%;                     /* deja libre el lado derecho para la imagen */
+    padding-top: 25px;
+}
+
+header .imagen {
+    position: absolute;             /* POSICIÓN absolute: pegada a la derecha del header */
+    top: 6px;
+    right: 6px;
+    width: 280px;
+    height: calc(100% - 12px);
+    background-color: #ffc000;
+    border: 2px solid #2f5597;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ===== NAV (azul) ===== */
+nav {
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 15px;
+    background-color: #2f5597;
+    border: 2px solid #70ad47;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ===== SECTION y ASIDE lado a lado con float ===== */
+section {
+    float: left;                    /* POSICIÓN: float a la izquierda */
+    width: 61%;
+    height: 230px;
+    padding: 20px;
+    background-color: #ed7d31;
+    border: 2px solid #2f5597;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+aside {
+    float: right;                   /* POSICIÓN: float a la derecha */
+    width: 36%;
+    height: 230px;
+    padding: 20px;
+    background-color: #ffff00;
+    border: 2px solid #2f5597;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== FOOTER (azul) ===== */
+footer {
+    clear: both;                    /* POSICIÓN: se coloca debajo de los floats */
+    height: 50px;
+    line-height: 50px;
+    margin-top: 15px;
+    background-color: #2f5597;
+    border: 2px solid #70ad47;
+    color: #ffffff;
+    text-align: center;
+}
